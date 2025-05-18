@@ -26,3 +26,9 @@ flutter:
   uses-material-design: true
   assets: 
     - images/logo1.PNG
+    - images/office.jpg
+    - images/office2.png
+    - images/office3.jpg
+    - images/illustrator.jpg
+    - images/photoshop.jpg
+    - images/premiere.jpg
