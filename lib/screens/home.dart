@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/screens/detailed_page.dart';
 import 'package:flutter_project/screens/favorite.dart';
 import 'package:flutter_project/screens/profile.dart';
 import 'package:flutter_project/models/shop_products.dart';
@@ -29,12 +30,17 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               _bulidProductCatagory(name: 'All Products', index: 0),
-              _bulidProductCatagory(name: 'Adobe', index: 1),
-              _bulidProductCatagory(name: 'Office', index: 2),
+              _bulidProductCatagory(name: 'office', index: 1),
+              _bulidProductCatagory(name: 'adobe', index: 2),
             ],
           ),
           Expanded(
-            child: isSelcted == 0 ? _bulidAllProducts() : _bulidOfficeProduct(),
+            child:
+                isSelcted == 0
+                    ? _bulidAllProducts()
+                    : isSelcted == 1
+                    ? _bulidOfficeProduct()
+                    : _bulidAdobeProduct(),
           ),
         ],
       ),
@@ -75,7 +81,17 @@ class _HomeState extends State<Home> {
       itemCount: ShopProduct.alProducts.length,
       itemBuilder: (context, index) {
         final allProduct = ShopProduct.alProducts[index];
-        return ProductCard(product: allProduct);
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailedPage(product: allProduct),
+              ),
+            );
+          },
+          child: ProductCard(product: allProduct),
+        );
       },
     ),
   );
@@ -93,7 +109,45 @@ class _HomeState extends State<Home> {
       itemCount: ShopProduct.office.length,
       itemBuilder: (context, index) {
         final officeProducts = ShopProduct.office[index];
-        return ProductCard(product: officeProducts);
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailedPage(product: officeProducts),
+              ),
+            );
+          },
+          child: ProductCard(product: officeProducts),
+        );
+      },
+    ),
+  );
+  _bulidAdobeProduct() => Container(
+    margin: EdgeInsets.only(top: 10),
+    child: GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        mainAxisSpacing: 12,
+        crossAxisCount: 2,
+        childAspectRatio: (100 / 140),
+        mainAxisExtent: 250,
+        crossAxisSpacing: 12,
+      ),
+      scrollDirection: Axis.vertical,
+      itemCount: ShopProduct.adobe.length,
+      itemBuilder: (context, index) {
+        final adobeProducts = ShopProduct.adobe[index];
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailedPage(product: adobeProducts),
+              ),
+            );
+          },
+          child: ProductCard(product: adobeProducts),
+        );
       },
     ),
   );

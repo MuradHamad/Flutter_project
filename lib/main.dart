@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_project/screens/auth.dart';
+
 import 'package:flutter_project/screens/favorite.dart';
 import 'package:flutter_project/screens/home.dart';
 import 'package:flutter_project/screens/profile.dart';
-import 'package:flutter_project/screens/splash.dart';
+
 import 'firebase_options.dart';
 
 void main() async {
@@ -16,7 +16,7 @@ void main() async {
 }
 
 class MainApp extends StatefulWidget {
-  MainApp({super.key});
+  const MainApp({super.key});
 
   @override
   State<MainApp> createState() => _MainAppState();
@@ -30,6 +30,7 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Center(

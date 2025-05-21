@@ -23,7 +23,9 @@ class _ProductCardState extends State<ProductCard> {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: [Icon(Icons.favorite_border_outlined)],
+            children: [
+              Icon(Icons.favorite_border_outlined, color: Colors.blueAccent),
+            ],
           ),
           SizedBox(
             height: 130,
@@ -36,11 +38,11 @@ class _ProductCardState extends State<ProductCard> {
           ),
           Text(
             widget.product.catagory,
-            style: TextStyle(fontSize: 14, color: Colors.red),
+            style: TextStyle(fontSize: 14, color: Colors.blue),
           ),
           Text(
             '\$ ${widget.product.price}',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ],
       ),

@@ -6,6 +6,7 @@ class Product {
   final double price;
   final String description;
   int quantity;
+  List specs;
 
   Product({
     required this.id,
@@ -15,5 +16,6 @@ class Product {
     required this.price,
     required this.description,
     required this.quantity,
+    required this.specs,
   });
 }
