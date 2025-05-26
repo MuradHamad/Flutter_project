@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/models/product.dart';
+import 'package:flutter_project/providers/favortie_provider.dart';
 
 class ProductCard extends StatefulWidget {
   const ProductCard({super.key, required this.product});
@@ -12,6 +13,8 @@ class ProductCard extends StatefulWidget {
 class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
+    final provider = FavortieProvider.of(context);
+
     return Container(
       width: MediaQuery.of(context).size.width / 2,
       padding: EdgeInsets.all(8),
@@ -24,7 +27,17 @@ class _ProductCardState extends State<ProductCard> {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Icon(Icons.favorite_border_outlined, color: Colors.blueAccent),
+              GestureDetector(
+                onTap: () {
+                  provider.toggleFavortie(widget.product);
+                },
+                child: Icon(
+                  provider.isExist(widget.product)
+                      ? Icons.favorite
+                      : Icons.favorite_border_outlined,
+                  color: Colors.blueAccent,
+                ),
+              ),
             ],
           ),
           SizedBox(

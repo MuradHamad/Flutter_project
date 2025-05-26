@@ -85,6 +85,37 @@ class DetailedPage extends StatelessWidget {
           ),
         ],
       ),
+      bottomSheet: Container(
+        padding: EdgeInsets.all(20),
+        alignment: Alignment.center,
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height / 10,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40),
+            topRight: Radius.circular(40),
+          ),
+          color: Colors.blue,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              '\$ ${product.price.toString()}',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            ElevatedButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.send),
+              label: Text('Add to Cart'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
