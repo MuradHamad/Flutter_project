@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/models/product.dart';
+import 'package:flutter_project/providers/cart_provider.dart';
+import 'package:flutter_project/screens/cart.dart';
 import 'package:flutter_project/widgets/specs.dart';
 
 class DetailedPage extends StatelessWidget {
@@ -7,6 +9,7 @@ class DetailedPage extends StatelessWidget {
   const DetailedPage({super.key, required this.product});
   @override
   Widget build(BuildContext context) {
+    final provider = CartProvider.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(this.product.name),
@@ -109,7 +112,13 @@ class DetailedPage extends StatelessWidget {
               ),
             ),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                provider.toggleProduct(product);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Cart()),
+                );
+              },
               icon: Icon(Icons.send),
               label: Text('Add to Cart'),
             ),

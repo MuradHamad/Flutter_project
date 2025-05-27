@@ -8,7 +8,7 @@ Product photoshop = Product(
   description:
       'Adobe Photoshop is the industry-standard software for image editing and graphic design. It offers a comprehensive suite of tools for photo manipulation, digital painting, UI design, and compositing. Ideal for photographers, artists, and designers who need precision and creative flexibility.',
   price: 239.88, // Annual subscription price ($19.99/month)
-  quantity: 100,
+  quantity: 0,
   specs: [
     '2.0 GHz processor',
     '8 GB RAM',
@@ -26,7 +26,7 @@ Product illustrator = Product(
   description:
       'Adobe Illustrator is a professional vector graphics application used to create logos, icons, illustrations, and typography. It provides powerful tools for precision drawing and scalable designs, making it a favorite among branding and UI designers.',
   price: 239.88, // $19.99/month annual plan
-  quantity: 100,
+  quantity: 0,
   specs: [
     '2.0 GHz processor',
     '8 GB RAM',
@@ -44,7 +44,7 @@ Product premiere = Product(
   description:
       'Adobe Premiere Pro is a professional video editing software used in film, television, and web content production. It supports high-resolution formats, multi-cam editing, color grading, and seamless integration with After Effects and Adobe Media Encoder.',
   price: 275.88, // $22.99/month annual plan
-  quantity: 100,
+  quantity: 0,
   specs: [
     '3.0 GHz quad-core processor',
     '16 GB RAM',
@@ -62,7 +62,7 @@ Product word = Product(
   price: 159.99,
   description:
       'Microsoft Word is a leading word processor used worldwide for creating and editing professional documents. It offers real-time collaboration, grammar suggestions, templates, and seamless integration with OneDrive and Microsoft 365, making it a must-have for business and academic work.',
-  quantity: 200,
+  quantity: 0,
   specs: [
     '1.6 GHz CPU',
     '4 GB RAM',
@@ -80,7 +80,7 @@ Product excel = Product(
   price: 159.99,
   description:
       'Microsoft Excel is a powerful spreadsheet software that provides tools for data analysis, visualization, and automation. It supports advanced formulas, pivot tables, charts, and integration with Power BI, making it ideal for professionals in finance, data, and operations.',
-  quantity: 180,
+  quantity: 0,
   specs: [
     '1.6 GHz CPU',
     '4 GB RAM',
@@ -98,7 +98,7 @@ Product powerpoint = Product(
   price: 159.99,
   description:
       'Microsoft PowerPoint is a presentation tool that enables users to build dynamic slide decks with animations, media, and professional templates. It\'s widely used for business meetings, classroom instruction, and webinars due to its user-friendly interface and collaboration features.',
-  quantity: 150,
+  quantity: 0,
   specs: [
     '1.6 GHz CPU',
     '4 GB RAM',
@@ -116,7 +116,7 @@ Product msProject = Product(
   price: 579.99,
   description:
       'Microsoft Project is a project management software designed to help teams plan, execute, and monitor projects. With Gantt charts, timelines, resource management, and task tracking, it supports professional-grade scheduling and project delivery.',
-  quantity: 75,
+  quantity: 0,
   specs: [
     '2.0 GHz dual-core CPU',
     '4 GB RAM',

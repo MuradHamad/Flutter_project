@@ -44,7 +44,7 @@ class _FavoriteState extends State<Favorite> {
                               onPressed: (context) {
                                 favList.removeAt(index);
                                 setState(() {});
-                              },
+                              }, //dd
                               backgroundColor: Colors.red,
                               foregroundColor: Colors.white,
                               label: 'Delete',
