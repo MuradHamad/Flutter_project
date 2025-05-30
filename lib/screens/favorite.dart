@@ -42,7 +42,7 @@ class _FavoriteState extends State<Favorite> {
                           children: [
                             SlidableAction(
                               onPressed: (context) {
-                                favList.removeAt(index);
+                                provider.toggleFavortie(favList[index]);
                                 setState(() {});
                               }, //dd
                               backgroundColor: Colors.red,

@@ -9,12 +9,14 @@ import 'package:flutter_project/screens/home.dart';
 import 'package:flutter_project/screens/login.dart';
 import 'package:flutter_project/screens/profile.dart';
 import 'package:flutter_project/screens/splash.dart';
+import 'package:flutter_project/utils/UserPreferences.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await UserSimplePreferences.init();
   runApp(MainApp());
 }
 

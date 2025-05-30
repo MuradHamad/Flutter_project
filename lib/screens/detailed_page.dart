@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/models/product.dart';
 import 'package:flutter_project/providers/cart_provider.dart';
 import 'package:flutter_project/screens/cart.dart';
+import 'package:flutter_project/utils/UserPreferences.dart';
 import 'package:flutter_project/widgets/specs.dart';
 
 class DetailedPage extends StatelessWidget {
@@ -112,7 +113,8 @@ class DetailedPage extends StatelessWidget {
               ),
             ),
             ElevatedButton.icon(
-              onPressed: () {
+              onPressed: () async {
+                await UserSimplePreferences.setProductList([product]);
                 provider.toggleProduct(product);
                 Navigator.push(
                   context,
